@@ -127,6 +127,13 @@ require("lz.n").load({
     end,
   },
   {
+    "nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    after = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     "oil.nvim",
     event = "DeferredUIEnter",
     after = function()
@@ -173,7 +180,7 @@ require("lz.n").load({
 
 require("nvim-treesitter.configs").setup({
   auto_install = false,
-  highlight = { enable = true },
+  highlight = { enable = true, disable = { "xml" } },
 })
 
 -- _____ KEYBINDS _____

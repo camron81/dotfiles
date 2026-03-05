@@ -65,6 +65,7 @@
                 conform-nvim
                 mini-clue
                 nvim-autopairs
+                nvim-ts-autotag
                 oil-nvim
               ]
             );

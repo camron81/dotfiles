@@ -37,6 +37,8 @@ in
 
     networking.hostName = "desktop";
 
+    services.flatpak.enable = true;
+
     users.users.ethan = {
       isNormalUser = true;
       extraGroups = [ "wheel" ];

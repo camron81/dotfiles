@@ -31,7 +31,6 @@ in
 
         packages = with pkgs; [
           bitwarden-desktop
-          freetube
           librewolf
           onlyoffice-desktopeditors
         ];
