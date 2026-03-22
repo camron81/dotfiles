@@ -248,6 +248,13 @@ vim.api.nvim_create_autocmd("Filetype", {
   end,
 })
 
+vim.api.nvim_create_autocmd("Filetype", {
+  pattern = { "vala" },
+  callback = function()
+    vim.bo.commentstring = "// %s"
+  end,
+})
+
 vim.api.nvim_create_autocmd("VimResized", {
   group = augroup,
   callback = function()
@@ -413,6 +420,7 @@ end
 vim.lsp.enable("clangd")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("nixd")
+vim.lsp.enable("vala_ls")
 
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
