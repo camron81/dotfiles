@@ -36,16 +36,9 @@ in
 
     nix = {
       channel.enable = false;
-
-      optimise = {
-        automatic = true;
-        dates = [ "weekly" ];
-        persistent = true;
-        randomizedDelaySec = "30min";
-      };
-
       settings = {
         allowed-users = [ "@wheel" ];
+        auto-optimise-store = true;
         connect-timeout = 5;
         experimental-features = [
           "nix-command"

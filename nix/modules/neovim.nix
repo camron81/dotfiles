@@ -17,6 +17,7 @@
           nixfmt-rfc-style
           ripgrep
           stylua
+          vala-language-server
           wl-clipboard
         ];
 
@@ -45,6 +46,7 @@
                 printf
                 sway
                 tsv
+                vala
                 vim
                 vimdoc
                 xml
