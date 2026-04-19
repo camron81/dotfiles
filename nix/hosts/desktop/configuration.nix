@@ -36,12 +36,15 @@ in
     };
 
     networking.hostName = "desktop";
-
+    programs.adb.enable = true;
     services.flatpak.enable = true;
 
     users.users.ethan = {
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
+      extraGroups = [
+        "adbusers"
+        "wheel"
+      ];
     };
   };
 }
