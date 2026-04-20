@@ -107,10 +107,10 @@ in
           enable = true;
           createDirectories = true;
           desktop = lib.mkDefault null;
-          documents = "${config.home.homeDirectory}/documents";
-          download = "${config.home.homeDirectory}/downloads";
+          documents = lib.mkDefault "${config.home.homeDirectory}/documents";
+          download = lib.mkDefault "${config.home.homeDirectory}/downloads";
           music = lib.mkDefault null;
-          pictures = lib.mkDefault null;
+          pictures = lib.mkDefault "${config.home.homeDirectory}/pictures";
           publicShare = lib.mkDefault null;
           templates = lib.mkDefault null;
           videos = lib.mkDefault null;
