@@ -22,29 +22,33 @@ in
     ];
   };
 
-  flake.nixosModules.desktop = _: {
-    boot = {
-      initrd.availableKernelModules = [
-        "xhci_pci"
-        "ahci"
-        "nvme"
-        "usb_storage"
-        "usbhid"
-        "sd_mod"
-      ];
-      kernelModules = [ "kvm-intel" ];
-    };
+  flake.nixosModules.desktop =
+    { pkgs, ... }:
+    {
+      boot = {
+        initrd.availableKernelModules = [
+          "xhci_pci"
+          "ahci"
+          "nvme"
+          "usb_storage"
+          "usbhid"
+          "sd_mod"
+        ];
+        kernelModules = [ "kvm-intel" ];
+        # To address CVE‑2026‑31431
+        kernelPackages = pkgs.linuxPackages_6_18;
+      };
 
-    networking.hostName = "desktop";
-    programs.adb.enable = true;
-    services.flatpak.enable = true;
+      networking.hostName = "desktop";
+      programs.adb.enable = true;
+      services.flatpak.enable = true;
 
-    users.users.ethan = {
-      isNormalUser = true;
-      extraGroups = [
-        "adbusers"
-        "wheel"
-      ];
+      users.users.ethan = {
+        isNormalUser = true;
+        extraGroups = [
+          "adbusers"
+          "wheel"
+        ];
+      };
     };
-  };
 }

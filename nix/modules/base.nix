@@ -109,11 +109,11 @@ in
           desktop = lib.mkDefault null;
           documents = lib.mkDefault "${config.home.homeDirectory}/documents";
           download = lib.mkDefault "${config.home.homeDirectory}/downloads";
-          music = lib.mkDefault null;
+          music = lib.mkDefault "${config.home.homeDirectory}/music";
           pictures = lib.mkDefault "${config.home.homeDirectory}/pictures";
           publicShare = lib.mkDefault null;
           templates = lib.mkDefault null;
-          videos = lib.mkDefault null;
+          videos = lib.mkDefault "${config.home.homeDirectory}/videos";
         };
       };
     };
