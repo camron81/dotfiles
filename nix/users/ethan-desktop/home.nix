@@ -33,6 +33,7 @@ in
           bitwarden-desktop
           librewolf
           onlyoffice-desktopeditors
+          prismlauncher
         ];
 
         sessionVariables = {
