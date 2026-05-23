@@ -15,6 +15,7 @@ in
       hardware.common-gpu-intel-comet-lake
       hardware.common-pc-ssd
       inputs.disko.nixosModules.disko
+      nixos.android
       nixos.base
       nixos.desktop
       nixos.gnome
@@ -40,13 +41,12 @@ in
       };
 
       networking.hostName = "desktop";
-      programs.adb.enable = true;
       services.flatpak.enable = true;
 
       users.users.ethan = {
         isNormalUser = true;
         extraGroups = [
-          "adbusers"
+          "adbusers" # FIXME: should be in android
           "wheel"
         ];
       };

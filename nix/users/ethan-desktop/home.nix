@@ -12,10 +12,12 @@ in
   flake.homeConfigurations."ethan@desktop" = inputs.home-manager.lib.homeManagerConfiguration {
     pkgs = inputs.nixpkgs.legacyPackages.${cfg.base.hostPlatform};
     modules = [
+      homeManager.android
       homeManager.base
       homeManager.desktop
       homeManager.git
       homeManager.gnome
+      homeManager.java
       homeManager.megacmd
       homeManager.neovim
       homeManager.ssh
@@ -33,6 +35,7 @@ in
           bitwarden-desktop
           librewolf
           onlyoffice-desktopeditors
+          picard
           prismlauncher
         ];
 
